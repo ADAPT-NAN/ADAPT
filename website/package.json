@@ -1,0 +1,7 @@
+{
+  "name": "adapt-nan-website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ADAPT-Nan website draft based on the supplied project documents",
+  "scripts": { "start": "node server.cjs", "check": "node --check app.js && node --check i18n.js && node --check content/th.js && node --check content/translations.js && node --check content/data.js && node --check server.cjs" }
+}
