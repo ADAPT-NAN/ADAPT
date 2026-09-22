@@ -19,3 +19,9 @@ html[lang=th] .hero-note,html[lang=th] footer p[lang=th],html[lang=th] .callout 
 @media(max-width:850px){.site-header{height:83px;gap:10px}.brand{font-size:22px}.brand small{font-size:7px;letter-spacing:1px}.brand img{width:35px;height:35px}.menu-toggle{display:flex;align-items:center;gap:8px;border:1px solid var(--line);padding:7px 10px;background:transparent;border-radius:4px;color:var(--ink);font-size:12px;order:4}.language-switch{margin-left:auto}.language-switch button{padding:4px 7px;min-width:30px}.site-header nav{display:none;position:absolute;top:83px;left:0;right:0;padding:23px;background:var(--paper);z-index:10;border-bottom:1px solid var(--line);box-shadow:0 14px 20px #203c3015;margin:0}.site-header nav.open{display:flex;flex-direction:column;align-items:stretch}.site-header nav a{padding:8px}}
 @media(max-width:480px){.brand{font-size:19px;gap:7px}.brand small{font-size:6px;letter-spacing:.7px}.brand img{width:29px;height:29px}html[lang=th] .brand small{font-size:7px}.site-header{gap:6px;padding:0 4%}.menu-toggle{padding:7px;font-size:11px;gap:6px}.language-switch button{font-size:11px;padding:3px 6px;min-width:27px}html[lang=th] .hero h1{font-size:39px}html[lang=th] .principles small{display:block;margin-left:0}html[lang=th] .page-heading h1{font-size:35px}}
 @media(max-width:480px){html[lang=th] .hero h1{font-size:clamp(30px,8.8vw,39px)}html[lang=th] .hero h1 em{display:block}}
+
+/* Contact email: smaller than the heading, but highlighted as the action to take. */
+.contact-panel h2{margin-bottom:18px}
+.contact-email{display:inline-flex;align-items:center;gap:12px;font-size:17px;font-weight:700;color:var(--green);background:var(--paper);border:1px solid #a9b8a0;border-radius:4px;padding:11px 18px;letter-spacing:.2px}
+.contact-email:hover{background:var(--green);border-color:var(--green);color:var(--paper)}
+html[lang=th] .contact-email{font-family:'DM Sans',Arial,sans-serif}
