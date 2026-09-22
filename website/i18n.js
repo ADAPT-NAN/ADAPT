@@ -4,10 +4,19 @@ let language='en';
 try { language=localStorage.getItem('adapt-language')==='th'?'th':'en'; } catch {}
 const originalText=new WeakMap();
 const originalAttributes=new WeakMap();
+// Exact matches first; otherwise ignore case, spacing and punctuation so small
+// edits to the English copy (e.g. removing a final period) keep their translation.
+const normalizeKey=s=>s.replace(/[^\p{L}\p{N}]+/gu,' ').trim().toLowerCase();
+let normalizedTranslations;
+function lookup(key){
+  if(Object.hasOwn(window.ADAPT_TRANSLATIONS,key))return window.ADAPT_TRANSLATIONS[key];
+  normalizedTranslations??=new Map(Object.entries(window.ADAPT_TRANSLATIONS).map(([en,th])=>[normalizeKey(en),th]));
+  return normalizedTranslations.get(normalizeKey(key));
+}
 function translate(text){
   if(language!=='th')return text;
   const key=text.trim();
-  let translated=window.ADAPT_TRANSLATIONS[key];
+  let translated=lookup(key);
   if(translated===undefined){
     translated=key.replace(/^(\d+) of (\d+) research topics$/, '$1 จาก $2 ประเด็นวิจัย')
       .replace(/^(\d+) of (\d+) team members$/, '$1 จาก $2 สมาชิกทีมงาน')
