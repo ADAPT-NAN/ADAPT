@@ -1,4 +1,6 @@
 window.ADAPT_TRANSLATIONS = {
+  "Explore the game repository": "เปิดคลังเกมเพื่อการเรียนรู้",
+  "(opens in a new tab)": "(เปิดในแท็บใหม่)",
   "Skip to content": "ข้ามไปยังเนื้อหา",
   "ADAPT-Nan home": "หน้าแรก ADAPT-Nan",
   "SCIENCE · PEOPLE · LANDSCAPES": "วิทยาศาสตร์ · ผู้คน · ภูมิทัศน์",

@@ -42,7 +42,7 @@ The supplied URL https://en.ird.fr/psf-adaptmod-2025-2027 was checked on 22 Sept
 ## Awaiting content
 
 - Project contact email and confirmed office addresses
-- Serious-game repository, paper library, and YouTube URLs
+- Paper library and YouTube URLs
 - Final curriculum downloads, schedules, and enrollment information
 - Approved publication title, release details, and downloadable materials
 - Project field photographs, if desired in place of the landscape illustration
@@ -58,3 +58,5 @@ Checked in the Codex browser: research filtering and keyword search, research de
 This is a local draft; it has not been published and has no backend, CMS, or email sending service. For static hosting, upload `index.html`, `styles.css`, `app.js`, `i18n.js`, `assets/`, and all three JavaScript files in `content/`; the source-text reference files and preview server are not required.
 
 Bilingual validation: checked translation coverage across all pages and all nine research articles, Thai/English switching, reload persistence, bilingual research and institution searches, and preservation of search/filter state. Thai browser title, document language, placeholders, accessible labels, and image descriptions are localized.
+
+Serious games links to https://gamerepocu.github.io/gamerepocu/ in a new tab, with Thai and English link labels.
