@@ -120,7 +120,7 @@ window.ADAPT_DATA = {
     },
     {
       "name": "Sattha Sila Phet Rangsan School",
-      "logo": ""
+      "logo": "assets/logos/sattha-sila-phet-rangsan.png"
     },
     {
       "name": "Sa School",
