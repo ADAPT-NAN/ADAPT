@@ -101,11 +101,44 @@ window.ADAPT_DATA = {
       ]
     }
   ],
+  "institutions": [
+    {
+      "name": "Chulalongkorn University",
+      "logo": "assets/logos/chulalongkorn.svg"
+    },
+    {
+      "name": "Kasetsart University",
+      "logo": "assets/logos/kasetsart.svg"
+    },
+    {
+      "name": "Rajamangala University of Technology Lanna Nan",
+      "logo": "assets/logos/rmutl.svg"
+    },
+    {
+      "name": "Nan Community College",
+      "logo": "assets/logos/nan-community-college.png"
+    },
+    {
+      "name": "Sattha Sila Phet Rangsan School",
+      "logo": ""
+    },
+    {
+      "name": "Sa School",
+      "logo": "assets/logos/sa-school.png"
+    },
+    {
+      "name": "IRD - Institute of Research for Sustainable Development",
+      "logo": ""
+    }
+  ],
   "team": [
     {
       "name": "Assoc. Prof. Dr. Pongchai Dumrongrojwatthana",
       "org": "Chulalongkorn University",
-      "faculty": "Faculty of Science"
+      "faculty": "Faculty of Science",
+      "role": "assistant",
+      "email": "pongchai.d@chula.ac.th",
+      "photo": "assets/team/pongchai.jpg"
     },
     {
       "name": "Assoc. Prof. Dr. Supin Sangsuk",
@@ -220,22 +253,28 @@ window.ADAPT_DATA = {
     {
       "name": "Dr. Jean-Christophe Castella",
       "org": "IRD - Institute of Research for Sustainable Development",
-      "faculty": ""
+      "faculty": "",
+      "role": "leader",
+      "email": "j.castella@ird.fr",
+      "photo": "assets/team/castella.jpg"
     },
     {
       "name": "Dr. Kittipum Chansri",
       "org": "IRD - Institute of Research for Sustainable Development",
-      "faculty": ""
+      "faculty": "",
+      "role": "assistant"
     },
     {
       "name": "Ms. Nichaphart Inta",
       "org": "IRD - Institute of Research for Sustainable Development",
-      "faculty": ""
+      "faculty": "",
+      "role": "assistant"
     },
     {
       "name": "Ms. Sirinan Khamchu",
       "org": "IRD - Institute of Research for Sustainable Development",
-      "faculty": ""
+      "faculty": "",
+      "role": "assistant"
     }
   ]
 };

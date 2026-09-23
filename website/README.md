@@ -18,14 +18,25 @@ Open `index.html` directly in a browser, or run `npm start` from this folder and
 
 ## Files to edit
 
-- `app.js`: page templates, learning descriptions, publication outline, resource status
-- `content/data.js`: English research descriptions and team directory
-- `content/th.js`: complete Thai research translations and source-provided Thai team names
-- `content/translations.js`: Thai interface and page-copy translations, keyed by English wording
-- `i18n.js`: language persistence, localized data, and reversible text/accessible-label translation
-- `styles.css`: design and responsive layouts
-- `assets/`: artwork extracted from the architecture document and an original SVG landscape illustration
+- `index.html`: header, navigation, and footer (shared by every page)
+- `app.js`: page templates, one labeled section per page (home, about, research, learning, resources, team), plus routing, the Back link, and language switching
+- `content/data.js`: English research descriptions, the team directory (roles, emails, photos), and the institution list with logos
+- `content/th.js`: Thai research translations, Thai research-card summaries, and Thai team names
+- `content/translations.js`: Thai translations of interface and page text, keyed by the English wording
+- `i18n.js`: language persistence, localized data, and text translation
+- `styles.css`: design and responsive layouts, in labeled sections that follow the page order
+- `assets/`: logo, artwork, team photos (`assets/team/`), and institution logos (`assets/logos/`)
 - `content/architecture.txt` and `content/publication-plan.txt`: extracted source text for reference
+
+## Common changes
+
+- **Change page text:** edit the English in `app.js` (or `index.html` for the header and footer), then update the same key in `content/translations.js` so the Thai still appears. Keys match regardless of letter case, spacing, and punctuation, but a reworded sentence needs its key updated.
+- **Add or edit a team member:** add an entry to `team` in `content/data.js` and the Thai name at the same position in `names` in `content/th.js`. Use `"role": "leader"` or `"role": "assistant"` to feature someone at the top of the page, with optional `"email"` and `"photo"` (e.g. `assets/team/name.jpg`). Everyone else is listed under their `org`.
+- **Add an institution or logo:** add it to `institutions` in `content/data.js` (the order there is the order on the team page) and add its Thai name to `content/translations.js`. Without a logo, its initials are shown.
+- **Publish a resource collection:** give its card a `link` and `linkLabel` in `resourceCards` in `app.js`; cards without a link show "Coming soon".
+- **Change colors:** edit the variables in `:root` at the top of `styles.css`.
+
+After editing, run `npm run check`, then `npm start` and switch between EN and ไทย to confirm both languages.
 
 The website uses plain HTML, CSS, and JavaScript, with hash-based routes so all pages also work without a hosting rewrite configuration. Google Fonts supplies DM Sans and Manrope when online; local fallback fonts are included in the styling. Core functionality does not require an external service.
 

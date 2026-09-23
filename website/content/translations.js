@@ -1,4 +1,8 @@
 window.ADAPT_TRANSLATIONS = {
+  "Back": "ย้อนกลับ",
+  "Project leader": "หัวหน้าโครงการ",
+  "Project assistants": "ผู้ช่วยโครงการ",
+  "Team by institution": "ทีมงานตามสังกัด",
   "Explore the game repository": "เปิดคลังเกมเพื่อการเรียนรู้",
   "(opens in a new tab)": "(เปิดในแท็บใหม่)",
   "Skip to content": "ข้ามไปยังเนื้อหา",
