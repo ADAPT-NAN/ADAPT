@@ -311,7 +311,27 @@ const learningContent = {
       </div>
     </div>
     <img class="wide-image" src="assets/image3.png" width="1376" height="739" alt="Curriculum architecture: four weeks of online preparation totaling 16 hours, followed by a 29-hour intensive field block across seven days in Nan. Learning follows an observe, embody, and synthesize cycle.">
-    <p class="result-count">Curriculum architecture from the ADAPT-Nan website planning document.</p>`,
+    <p class="result-count">Curriculum architecture from the ADAPT-Nan website planning document.</p>
+    <h3 style="margin-top:34px">Seven days in the field</h3>
+    <ol class="day-list">
+      <li><b>Day 1 · Sunday</b> Arrival, welcome, and team building</li>
+      <li><b>Day 2 · Monday</b> Rice-based agroecological systems</li>
+      <li><b>Day 3 · Tuesday</b> Rice systems and companion modelling with farmers</li>
+      <li><b>Day 4 · Wednesday</b> Diversification, agroforestry, and community development</li>
+      <li><b>Day 5 · Thursday</b> Nan Forum: multi-stakeholder perspectives and a role-play game</li>
+      <li><b>Day 6 · Friday</b> Business models and actor networks</li>
+      <li><b>Day 7 · Saturday</b> Synthesis, evaluation, and celebration</li>
+    </ol>
+    <p class="body-copy">Students are assessed on a field journal and documentation (40%), a reflective analysis essay (40%), and their contribution to collaborative learning (20%).</p>
+    <div class="callout">
+      <h3>Curriculum documents</h3>
+      <p>From the curriculum development workshops held on 10 and 25 February 2026.</p>
+      <div class="doc-links">
+        <a class="doc-link" href="assets/docs/bsc-curriculum-flyer.pdf" target="_blank" rel="noopener noreferrer">Programme flyer <small>PDF · 899 KB</small></a>
+        <a class="doc-link" href="assets/docs/bsc-curriculum-workshop-report-en.pdf" target="_blank" rel="noopener noreferrer">English report <small>PDF · 962 KB</small></a>
+        <a class="doc-link" href="assets/docs/bsc-curriculum-workshop-report-th.pdf" target="_blank" rel="noopener noreferrer" lang="th">รายงานภาษาไทย <small>PDF · 554 KB</small></a>
+      </div>
+    </div>`,
   school: `
     <span class="badge">Secondary education</span>
     <h2 style="margin-top:20px">Learning that starts with curiosity</h2>
@@ -321,9 +341,40 @@ const learningContent = {
       <li>Learn through simulation games, farm visits, and practical workshops</li>
       <li>Connect teachers and university researchers through co-designed learning activities</li>
     </ul>
+    <p class="body-copy">Two integrated curricula were designed together by the teachers of Sattha Sila Phet Rangsan School and university staff, and are taught at the school with support from community resource people. Students first met the approach through a role-play game about chemical use in farming.</p>
+    <div class="split">
+      <div>
+        <h3>Safe vegetable production</h3>
+        <span class="badge">Term 1 from 11 May · Term 2 from 19 October</span>
+        <ul>
+          <li>Food security, food safety, and what “safe vegetables” mean for Gen Z</li>
+          <li>Surveying local and indigenous vegetables, and market demand near the school</li>
+          <li>Seedbeds, growing media, and safe crop care</li>
+          <li>Insects, plant diseases, and biological pest management</li>
+          <li>Non-turning compost and fermented liquid fertiliser</li>
+          <li>Processing, sales planning, and working as a team</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Indigenous rice farming</h3>
+        <span class="badge">Local wisdom teachers lead the field sessions</span>
+        <ul>
+          <li>The Sufficiency Economy Philosophy in everyday life</li>
+          <li>Thai proverbs and sayings about rice and rice farming</li>
+          <li>Thai rice varieties, GI rice, and a rice variety card game</li>
+          <li>Grain structure, germination, and seedling growth</li>
+          <li>The rice field ecosystem, its pests and natural enemies, through a food web game</li>
+          <li>Rice traditions: the buffalo spirit ceremony and the rice destiny ceremony</li>
+        </ul>
+      </div>
+    </div>
     <div class="callout">
-      <h3>Safe Vegetable Curriculum</h3>
-      <p>The curriculum document, classroom materials, photographs, and videos are coming soon.</p>
+      <h3>Curriculum workshop report</h3>
+      <p>Reported from the curriculum planning workshop held at the school on 12 February 2026.</p>
+      <div class="doc-links">
+        <a class="doc-link" href="assets/docs/high-school-curriculum-workshop-report-en.pdf" target="_blank" rel="noopener noreferrer">English report <small>PDF · 448 KB</small></a>
+        <a class="doc-link" href="assets/docs/high-school-curriculum-workshop-report-th.pdf" target="_blank" rel="noopener noreferrer" lang="th">รายงานภาษาไทย <small>PDF · 408 KB</small></a>
+      </div>
     </div>`,
   community: `
     <span class="badge">Farmers & communities</span>
