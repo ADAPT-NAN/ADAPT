@@ -325,11 +325,8 @@ const learningContent = {
     <p class="body-copy">Students are assessed on a field journal and documentation (40%), a reflective analysis essay (40%), and their contribution to collaborative learning (20%).</p>
     <div class="callout">
       <h3>Curriculum documents</h3>
-      <p>From the curriculum development workshops held on 10 and 25 February 2026.</p>
       <div class="doc-links">
         <a class="doc-link" href="assets/docs/bsc-curriculum-flyer.pdf" target="_blank" rel="noopener noreferrer">Programme flyer <small>PDF · 899 KB</small></a>
-        <a class="doc-link" href="assets/docs/bsc-curriculum-workshop-report-en.pdf" target="_blank" rel="noopener noreferrer">English report <small>PDF · 962 KB</small></a>
-        <a class="doc-link" href="assets/docs/bsc-curriculum-workshop-report-th.pdf" target="_blank" rel="noopener noreferrer" lang="th">รายงานภาษาไทย <small>PDF · 554 KB</small></a>
       </div>
     </div>`,
   school: `
@@ -366,14 +363,6 @@ const learningContent = {
           <li>The rice field ecosystem, its pests and natural enemies, through a food web game</li>
           <li>Rice traditions: the buffalo spirit ceremony and the rice destiny ceremony</li>
         </ul>
-      </div>
-    </div>
-    <div class="callout">
-      <h3>Curriculum workshop report</h3>
-      <p>Reported from the curriculum planning workshop held at the school on 12 February 2026.</p>
-      <div class="doc-links">
-        <a class="doc-link" href="assets/docs/high-school-curriculum-workshop-report-en.pdf" target="_blank" rel="noopener noreferrer">English report <small>PDF · 448 KB</small></a>
-        <a class="doc-link" href="assets/docs/high-school-curriculum-workshop-report-th.pdf" target="_blank" rel="noopener noreferrer" lang="th">รายงานภาษาไทย <small>PDF · 408 KB</small></a>
       </div>
     </div>`,
   community: `
