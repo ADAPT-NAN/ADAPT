@@ -610,6 +610,46 @@ footer {
   border-radius: 5px;
   margin: 28px 0;
 }
+.doc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+.doc-link {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 14px;
+}
+.doc-link small {
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: .5px;
+  color: var(--muted);
+}
+.doc-link:hover {
+  border-color: var(--green);
+}
+.day-list {
+  margin: 14px 0 22px;
+  padding-left: 18px;
+  color: var(--muted);
+}
+.day-list li {
+  margin-bottom: 7px;
+}
+.day-list b {
+  color: var(--ink);
+  margin-right: 6px;
+}
 .gallery {
   margin-bottom: 18px;
 }
