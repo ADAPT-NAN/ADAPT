@@ -1,4 +1,5 @@
 window.ADAPT_TRANSLATIONS = {
+  "Learning center": "ศูนย์การเรียนรู้",
   "Back": "ย้อนกลับ",
   "Project leader": "หัวหน้าโครงการ",
   "Project assistants": "ผู้ช่วยโครงการ",
