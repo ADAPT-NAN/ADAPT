@@ -235,7 +235,7 @@ function study(id) {
 /* Learning                                                            */
 /* ------------------------------------------------------------------ */
 
-const learningTabs = {university: 'University', school: 'High school', community: 'Farmers & communities'};
+const learningTabs = {university: 'University', school: 'High school', community: 'Farmers & communities', centers: 'Learning center'};
 const learningContent = {
   university: `
     <span class="badge">University learning</span>
@@ -288,7 +288,7 @@ const learningContent = {
 };
 
 function learning(key = 'university') {
-  if (!learningContent[key]) key = 'university';
+  if (!learningContent[key] && key !== 'centers') key = 'university';
   return `
     <div class="container">
       ${heading('Learning together', 'The landscape is<br>our classroom', 'Experiential education brings scientific knowledge and community wisdom into a shared learning journey.')}
@@ -296,7 +296,7 @@ function learning(key = 'university') {
         ${Object.entries(learningTabs).map(([k, label]) => `
           <button class="filter" data-learning="${k}" aria-pressed="${k === key}">${label}</button>`).join('')}
       </div>
-      <section class="tabs-content" style="margin-bottom:70px">${learningContent[key]}</section>
+      <section class="tabs-content" style="margin-bottom:70px">${key === 'centers' ? window.NanLearning.html() : learningContent[key]}</section>
     </div>`;
 }
 
@@ -531,6 +531,7 @@ function render() {
   }));
 
   localize(main);
+  if (route === 'learning' && param === 'centers') window.NanLearning.mount();
   window.scrollTo(0, 0);
 }
 
