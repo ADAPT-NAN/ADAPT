@@ -70,11 +70,11 @@ function home() {
         <div class="hero-note">Agroecology development in Nan, Thailand</div>
       </div>
       <div class="hero-art">
-        <img src="assets/landscape.svg" alt="Illustrated mountain landscape with terraced fields and a farm house">
+        <img src="assets/hero-nan.jpg" width="1600" height="901" alt="Rice paddies reflecting the morning sun, with village houses and forested hills behind them in Nan Province">
         <span class="art-label">NAN PROVINCE · THAILAND</span>
         <div class="art-caption">
           <span>A future rooted in living landscapes</span>
-          <span>Landscape illustration</span>
+          <span>Rice fields at sunrise, Nan</span>
         </div>
       </div>
     </section>
@@ -130,9 +130,12 @@ function home() {
 /* ------------------------------------------------------------------ */
 
 const workingMethods = [
-  ['Observe & listen', 'Direct observation, interviews, and focus groups bring different perspectives into the conversation.'],
-  ['Explore together', 'Role-play games and participatory workshops help people explore complex systems and possible futures.'],
-  ['Learn through practice', 'Field learning connects scientific ideas with community experience and intergenerational knowledge.'],
+  ['Observe & listen', 'Direct observation, interviews, and focus groups bring different perspectives into the conversation.',
+    'methods/method-observe.jpg', 'A researcher and a student interviewing a farmer under a field shelter, taking notes together'],
+  ['Explore together', 'Role-play games and participatory workshops help people explore complex systems and possible futures.',
+    'methods/method-explore.jpg', 'Community members seated around a role-play game board during a participatory workshop'],
+  ['Learn through practice', 'Field learning connects scientific ideas with community experience and intergenerational knowledge.',
+    'methods/method-practice.jpg', 'Villagers and a researcher sitting together on the forest floor during a community forest visit'],
 ];
 
 function about() {
@@ -155,8 +158,9 @@ function about() {
       <section class="section">
         <span class="eyebrow">How we work</span>
         <div class="grid">
-          ${workingMethods.map(([title, text]) => `
-            <div>
+          ${workingMethods.map(([title, text, image, alt]) => `
+            <div class="method">
+              <img class="method-photo" src="assets/${image}" width="900" height="507" alt="${alt}" loading="lazy">
               <h3>${title}</h3>
               <p class="body-copy">${text}</p>
             </div>`).join('')}
