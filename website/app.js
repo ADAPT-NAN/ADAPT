@@ -130,13 +130,67 @@ function home() {
 /* ------------------------------------------------------------------ */
 
 const workingMethods = [
-  ['Observe & listen', 'Direct observation, interviews, and focus groups bring different perspectives into the conversation.',
-    'methods/method-observe.jpg', 'A researcher and a student interviewing a farmer under a field shelter, taking notes together'],
-  ['Explore together', 'Role-play games and participatory workshops help people explore complex systems and possible futures.',
-    'methods/method-explore.jpg', 'Community members seated around a role-play game board during a participatory workshop'],
-  ['Learn through practice', 'Field learning connects scientific ideas with community experience and intergenerational knowledge.',
-    'methods/method-practice.jpg', 'Villagers and a researcher sitting together on the forest floor during a community forest visit'],
+  {
+    title: 'Observe & listen',
+    text: 'Direct observation, interviews, and focus groups bring different perspectives into the conversation.',
+    photos: [
+      ['methods/method-observe.jpg', 'A researcher and a student interviewing a farmer under a field shelter, taking notes together'],
+      ['methods/observe-interview-officials.jpg', 'Researchers interviewing local officials beside a field, notes in hand'],
+      ['methods/observe-livestock-visit.jpg', 'A farmer showing his pig pens to visitors during a farm visit'],
+      ['methods/observe-tobacco-harvest.jpg', 'A farmer sorting freshly harvested tobacco leaves into baskets'],
+      ['methods/observe-cattle-fair.jpg', 'Farmers and researchers inspecting native cattle at a provincial livestock fair'],
+    ],
+  },
+  {
+    title: 'Explore together',
+    text: 'Role-play games and participatory workshops help people explore complex systems and possible futures.',
+    photos: [
+      ['methods/method-explore.jpg', 'Community members seated around a role-play game board during a participatory workshop'],
+      ['methods/explore-map-workshop.jpg', 'Participants leaning over a large aerial map of their village, marking it together'],
+      ['methods/explore-map-closeup.jpg', 'Hands placing orange markers on an aerial map to show land use'],
+      ['methods/explore-map-meeting.jpg', 'A group gathered around an aerial map on a meeting table, drawing and discussing'],
+      ['methods/explore-model-group.jpg', 'Villagers and students crowding around a three-dimensional landscape model'],
+      ['methods/explore-model-discussion.jpg', 'A facilitator explaining the landscape model to seated participants'],
+    ],
+  },
+  {
+    title: 'Learn through practice',
+    text: 'Field learning connects scientific ideas with community experience and intergenerational knowledge.',
+    photos: [
+      ['methods/method-practice.jpg', 'Villagers and a researcher sitting together on the forest floor during a community forest visit'],
+      ['methods/practice-community-forest.jpg', 'A community forest of tall trees with a collection point among the trunks'],
+      ['methods/practice-vegetable-nursery.jpg', 'A grower tending trays of lettuce seedlings under a shade net'],
+      ['methods/practice-sorting-harvest.jpg', 'A farmer spreading the harvest on a drying mat beside her house'],
+      ['methods/practice-drying-racks.jpg', 'Rows of bamboo drying racks laid out in the open air after harvest'],
+      ['methods/practice-rice-terraces.jpg', 'Young rice growing in irrigated paddies framed by trees and hills'],
+    ],
+  },
 ];
+
+// One slideshow per method: arrows and dots move between photos, and a click
+// opens the photo full size in the shared lightbox.
+function methodGallery(method, index) {
+  return `
+    <div class="method">
+      <div class="gallery" data-gallery="${index}">
+        <div class="gallery-frame">
+          ${method.photos.map(([src, alt], i) => `
+            <button type="button" class="gallery-slide${i ? '' : ' is-current'}" data-slide="${i}" aria-label="Open photo full size" ${i ? 'tabindex="-1" aria-hidden="true"' : ''}>
+              <img src="assets/${src}" width="1200" height="675" alt="${alt}" loading="lazy">
+            </button>`).join('')}
+          <button type="button" class="gallery-arrow prev" data-step="-1" aria-label="Previous photo">‹</button>
+          <button type="button" class="gallery-arrow next" data-step="1" aria-label="Next photo">›</button>
+          <span class="gallery-count" aria-hidden="true">1 / ${method.photos.length}</span>
+        </div>
+        <div class="gallery-dots" role="tablist" aria-label="Choose a photo">
+          ${method.photos.map((p, i) => `
+            <button type="button" class="gallery-dot${i ? '' : ' is-current'}" data-dot="${i}" role="tab" aria-selected="${!i}" aria-label="Photo ${i + 1}"></button>`).join('')}
+        </div>
+      </div>
+      <h3>${method.title}</h3>
+      <p class="body-copy">${method.text}</p>
+    </div>`;
+}
 
 function about() {
   return `
@@ -158,12 +212,7 @@ function about() {
       <section class="section">
         <span class="eyebrow">How we work</span>
         <div class="grid">
-          ${workingMethods.map(([title, text, image, alt]) => `
-            <div class="method">
-              <img class="method-photo" src="assets/${image}" width="900" height="507" alt="${alt}" loading="lazy">
-              <h3>${title}</h3>
-              <p class="body-copy">${text}</p>
-            </div>`).join('')}
+          ${workingMethods.map(methodGallery).join('')}
         </div>
       </section>
       ${partners()}
@@ -534,9 +583,112 @@ function render() {
     location.hash = `learning/${b.dataset.learning}`;
   }));
 
+  if (route === 'about') mountGalleries();
+
   localize(main);
   if (route === 'learning' && param === 'centers') window.NanLearning.mount();
   window.scrollTo(0, 0);
+}
+
+/* ------------------------------------------------------------------ */
+/* Photo galleries and lightbox                                        */
+/* ------------------------------------------------------------------ */
+
+function mountGalleries() {
+  document.querySelectorAll('[data-gallery]').forEach(gallery => {
+    const photos = workingMethods[Number(gallery.dataset.gallery)].photos;
+    const slides = [...gallery.querySelectorAll('.gallery-slide')];
+    const dots = [...gallery.querySelectorAll('.gallery-dot')];
+    const count = gallery.querySelector('.gallery-count');
+    let current = 0;
+
+    const show = index => {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        const on = i === current;
+        slide.classList.toggle('is-current', on);
+        slide.toggleAttribute('aria-hidden', !on);
+        slide.tabIndex = on ? 0 : -1;
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-current', i === current);
+        dot.setAttribute('aria-selected', String(i === current));
+      });
+      count.textContent = `${current + 1} / ${slides.length}`;
+    };
+
+    gallery.querySelectorAll('[data-step]').forEach(button => button.addEventListener('click', event => {
+      event.preventDefault();
+      show(current + Number(button.dataset.step));
+    }));
+    dots.forEach(dot => dot.addEventListener('click', () => show(Number(dot.dataset.dot))));
+    slides.forEach(slide => slide.addEventListener('click', () => openLightbox(photos, Number(slide.dataset.slide))));
+
+    // Swiping left or right moves between photos on a touch screen.
+    let startX = null;
+    gallery.addEventListener('touchstart', e => {startX = e.changedTouches[0].clientX;}, {passive: true});
+    gallery.addEventListener('touchend', e => {
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 45) show(current + (dx < 0 ? 1 : -1));
+      startX = null;
+    }, {passive: true});
+  });
+}
+
+let lightboxPhotos = [];
+let lightboxIndex = 0;
+let lightboxOpener = null;
+
+function lightboxElement() {
+  let box = document.querySelector('.lightbox');
+  if (box) return box;
+  box = document.createElement('div');
+  box.className = 'lightbox';
+  box.hidden = true;
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-modal', 'true');
+  box.innerHTML = `
+    <button type="button" class="lightbox-close" aria-label="Close">×</button>
+    <button type="button" class="lightbox-arrow prev" data-step="-1" aria-label="Previous photo">‹</button>
+    <figure class="lightbox-figure"><img alt=""><figcaption></figcaption></figure>
+    <button type="button" class="lightbox-arrow next" data-step="1" aria-label="Next photo">›</button>`;
+  box.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+  box.querySelectorAll('[data-step]').forEach(button => button.addEventListener('click', () => {
+    showLightbox(lightboxIndex + Number(button.dataset.step));
+  }));
+  box.addEventListener('click', event => {
+    if (event.target === box) closeLightbox();
+  });
+  document.body.append(box);
+  return box;
+}
+
+function showLightbox(index) {
+  const box = lightboxElement();
+  lightboxIndex = (index + lightboxPhotos.length) % lightboxPhotos.length;
+  const [src, alt] = lightboxPhotos[lightboxIndex];
+  box.querySelector('img').src = `assets/${src}`;
+  box.querySelector('img').alt = alt;
+  box.querySelector('figcaption').textContent = `${translate(alt)} · ${lightboxIndex + 1} / ${lightboxPhotos.length}`;
+}
+
+function openLightbox(photos, index) {
+  lightboxPhotos = photos;
+  lightboxOpener = document.activeElement;
+  const box = lightboxElement();
+  box.hidden = false;
+  document.body.classList.add('no-scroll');
+  showLightbox(index);
+  box.querySelector('.lightbox-close').focus();
+}
+
+function closeLightbox() {
+  const box = document.querySelector('.lightbox');
+  if (!box || box.hidden) return;
+  box.hidden = true;
+  document.body.classList.remove('no-scroll');
+  lightboxOpener?.focus();
 }
 
 /* ------------------------------------------------------------------ */
@@ -553,6 +705,13 @@ document.querySelector('.menu-toggle').addEventListener('click', e => {
   e.currentTarget.setAttribute('aria-expanded', String(open));
 });
 document.addEventListener('keydown', e => {
+  const box = document.querySelector('.lightbox');
+  if (box && !box.hidden) {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showLightbox(lightboxIndex - 1);
+    if (e.key === 'ArrowRight') showLightbox(lightboxIndex + 1);
+    return;
+  }
   if (e.key === 'Escape') closeMenu();
 });
 
