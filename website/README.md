@@ -19,13 +19,15 @@ Open `index.html` directly in a browser, or run `npm start` from this folder and
 ## Files to edit
 
 - `index.html`: header, navigation, and footer (shared by every page)
-- `app.js`: page templates, one labeled section per page (home, about, research, learning, resources, team), plus routing, the Back link, and language switching
-- `content/data.js`: English research descriptions, the team directory (roles, emails, photos), and the institution list with logos
+- `app.js`: page templates, one labeled section per page (home, about, research, learning, resources, learning media, team), plus pop-up windows, routing, the Back link, and language switching
+- `content/data.js`: English research descriptions, the team directory (roles, photos, bios), and the institution list with logos
+- `content/media.js`: resources listed on the Learning media page (`#media`)
 - `content/th.js`: Thai research translations, Thai research-card summaries, and Thai team names
 - `content/translations.js`: Thai translations of interface and page text, keyed by the English wording
 - `i18n.js`: language persistence, localized data, and text translation
 - `styles.css`: design and responsive layouts, in labeled sections that follow the page order
-- `assets/`: logo, artwork, team photos (`assets/team/`), and institution logos (`assets/logos/`)
+- `assets/`: logo, artwork, icons, team photos (`assets/team/`), institution logos (`assets/logos/`), learning media covers (`assets/media/`), and documents (`assets/docs/`)
+- `EDITING-GUIDE.md`: step-by-step guide for project members who update research pages and learning media on GitHub
 - `content/architecture.txt` and `content/publication-plan.txt`: extracted source text for reference
 
 ## Common changes
@@ -50,11 +52,16 @@ Research descriptions and English team names follow the architecture document. W
 
 The supplied URL https://en.ird.fr/psf-adaptmod-2025-2027 was checked on 22 September 2026. It describes ADAPTMOD in Côte d’Ivoire, a different project. Its project information and contacts were not incorporated into ADAPT-Nan.
 
+## Contact form
+
+The "Contact us" button on the team page opens a form that sends messages to adaptnan@gmail.com through FormSubmit (https://formsubmit.co), a free service for static websites. The first message sent from the live website triggers a one-time confirmation email to adaptnan@gmail.com; click its link to activate delivery. The address is set in `CONTACT_EMAIL` in `app.js`.
+
 ## Awaiting content
 
-- Project contact email and confirmed office addresses
-- Paper library and YouTube URLs
-- Final curriculum downloads, schedules, and enrollment information
+- Photos for the university and high school learning pathways (frames marked "Photos coming soon")
+- Pictures and bios for the other team members
+- Papers, videos, and the ADAPT-Nan YouTube channel for the Learning media page
+- High school curriculum documents
 - Approved publication title, release details, and downloadable materials
 - Project field photographs, if desired in place of the landscape illustration
 

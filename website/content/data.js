@@ -2,6 +2,7 @@ window.ADAPT_DATA = {
   "research": [
     {
       "id": "1-1",
+      "short": "Agricultural transformations",
       "number": "1.1",
       "group": 1,
       "title": "Agricultural transformations and environmental issues",
@@ -20,9 +21,10 @@ window.ADAPT_DATA = {
     },
     {
       "id": "1-2",
+      "short": "Toxic landscapes",
       "number": "1.2",
       "group": 1,
-      "title": "Toxic landscapes and livelihoods from chemical use in agriculture",
+      "title": "Toxic landscapes and community livelihoods",
       "paragraphs": [
         "Getting out of chemical use in agriculture to reduce contaminations of the ecosystems and impacts on human health. OneHealth approaches applied to rodents in Nan. Individual interview and focus group discussions. Participatory workshops, role play games, community engagement, exploration of scenarios toward reducing pesticide use.",
         "Participatory exploration of scenarios out of chemical use: changes in techniques - practices, principles - regulations, policies changes.",
@@ -33,6 +35,7 @@ window.ADAPT_DATA = {
     },
     {
       "id": "1-3",
+      "short": "Biodiversity dynamics",
       "number": "1.3",
       "group": 1,
       "title": "Biodiversity dynamics between forest and agriculture",
@@ -43,29 +46,32 @@ window.ADAPT_DATA = {
     },
     {
       "id": "2-1",
+      "short": "Organic networks",
       "number": "2.1",
       "group": 2,
-      "title": "Organic vegetable networks – Sustaining income for smallholders",
+      "title": "Organic networks – Sustaining income for smallholders",
       "paragraphs": [
-        "What is the future of organic farming in Nan Province and what would be the enabling conditions of such a future? How does organic farming link with ecotourism potential of the upland province. We address these questions by investigating the past and the present of organic farming and then by mobilizing this knowledge to explore possible futures with key stakeholders.",
+        "What is the future of organic farming in Nan Province and what would be the enabling conditions of a sustainable future? How does organic farming link with ecotourism potential of the upland province. We address these questions by investigating the past and the present of organic farming and then by mobilizing this knowledge to explore possible futures with key stakeholders.",
         "Going organic is not only a question of agronomic practices or economic development. In this research, we investigated the multiple dimensions of organic agriculture, including the underlying values of engagement in alternative practices and the challenges related to the marketing of clean products (certification, etc.). Going organic is also a lifestyle beyond agricultural practices. We study the pathways that brought individuals or collectives to different models of organic farming and explore the diversity of organic farms in Nan province."
       ]
     },
     {
       "id": "2-2",
+      "short": "Sustainable livestock",
       "number": "2.2",
       "group": 2,
       "title": "Native Red Cows - Preserving natural and cultural heritage",
       "paragraphs": [
-        "The Nan Red Cow landrace is a domesticated, locally adapted, native species of cattle that has developed over time, through adaptation to its natural and cultural environment, and due to isolation from other populations of the species. A research-action program started 10 years ago to characterize the genetic strain of the Nan red cow and then to preserve this traditional landrace as an agricultural heritage of Nan Province. Following training sessions, pure breed cows were given to members of a farmers’ network who shared the calves born to other members of the network to gradually improve the genetics of the native cow population.",
+        "The Nan Red Cow landrace is a domesticated native species of cattle that have developed over time through adaptation to its natural and cultural environment. A research-action program started 10 years ago to characterize the genetic strain of the Nan red cow and then to preserve this traditional landrace as an agricultural heritage of Nan Province. Following training sessions, pure breed cows were given to members of a farmers’ network who shared the calves born to other members of the network to gradually improve the genetics of the native cow population.",
         "Our outcome evidencing study investigates the transformative role of the scientific knowledge mobilized by Chulalongkorn University’s Center for Social Engagement in this intervention. It also explores the benefits and constraints related to the different intervention mechanisms to see to what extent they can support the long-term community engagement. The study feeds contemporary scientific debates about transformative research and the role of scientific knowledge in supporting local development."
       ]
     },
     {
       "id": "2-3",
+      "short": "Young talents",
       "number": "2.3",
       "group": 2,
-      "title": "La-on Nan – Sensitizing the youth to forst and biodiversity values",
+      "title": "La-on Nan – Sensitizing the youth to biodiversity values",
       "paragraphs": [
         "Scientific research conducted on community forests in Nan Province have revealed the value of the ecosystem services they provide. However, this rich body of knowledge still needed to be passed on to the younger generation – to drive their engagement in forest conservation. The research entitled “La Oon Nan or Nan Talents” was implemented by the Faculty of Science of Chulalongkorn University. It created shared learning among youths about community forest management.",
         "The participatory action-research comprised three main stages: (i) sensitization of school children and local youths on forest multiple values through gaming simulation approaches, (ii) involved community members in monitoring forest resources through direct measurements of carbon and biodiversity, and (iii) shared the results with community members and local authorities through creative communication approaches. The evaluation study of “La Oon Nan” assessed the impact pathway of the transformative pedagogy that was applied by the action-research described here above over a ten-year period in Nan Province."
@@ -73,6 +79,7 @@ window.ADAPT_DATA = {
     },
     {
       "id": "3-1",
+      "short": "Learning centers",
       "number": "3.1",
       "group": 3,
       "title": "Learning centers as islands of agroecological coherence",
@@ -83,6 +90,7 @@ window.ADAPT_DATA = {
     },
     {
       "id": "3-2",
+      "short": "Community engagement",
       "number": "3.2",
       "group": 3,
       "title": "From community engagement to agroecology movement",
@@ -93,9 +101,11 @@ window.ADAPT_DATA = {
     },
     {
       "id": "3-3",
+      "short": "Experiential learning",
       "number": "3.3",
       "group": 3,
       "title": "Experiential learning for advancing agroecology",
+      "summary": "Advancing agroecology requires: (i) strong leadership driven by higher values, (ii) adaptive spaces favoring synergies across sectors, and (iii) governance models supportive to knowledge co-creation.",
       "paragraphs": [
         "In the context of Nan Province, we have shown the key roles of: (i) strong leadership driven by higher values and principles, (ii) adaptive spaces favoring synergies across multiple sectors, and (iii) governance models supportive to knowledge co-creation. They are crucial elements of an agroecological transition capable of dealing with the long list of “wicked problems” that have persisted in time. Today, a large part of the farmers is still dependent on intensive monocropping for their survival and many of them are trapped in the vicious circle of indebtedness. While this agricultural population is ageing and intensive monocropping is still covering large areas of the province, new hopes come in the form of “newcomers” who develop alternative practices better aligned with the principles of agroecology. To support intergenerational solidarity and experiential education, we co-designed two agroecological curriculum dedicated to three types of learners: high school students, community members and university students."
       ]
@@ -136,8 +146,7 @@ window.ADAPT_DATA = {
       "name": "Assoc. Prof. Dr. Pongchai Dumrongrojwatthana",
       "org": "Chulalongkorn University",
       "faculty": "Faculty of Science",
-      "role": "assistant",
-      "email": "pongchai.d@chula.ac.th",
+      "role": "leader",
       "photo": "assets/team/pongchai.jpg"
     },
     {
@@ -255,14 +264,15 @@ window.ADAPT_DATA = {
       "org": "IRD - Institute of Research for Sustainable Development",
       "faculty": "",
       "role": "leader",
-      "email": "j.castella@ird.fr",
-      "photo": "assets/team/castella.jpg"
+      "photo": "assets/team/castella.jpg",
+      "bio": "Jean-Christophe Castella is an agronomist and geographer at the French National Research Institute for Sustainable Development (IRD), currently based at the Faculty of Science of Chulalongkorn University, in Thailand. He has been involved in participatory action research in upland areas of Southeast Asia for three decades. He studies the impact of agro-ecological and socio-economic changes on rural landscapes and livelihoods. He uses multi-stakeholder group discussions and reflections, serious games and visual techniques to enhance collective intelligence and performance. He designs models, products, and innovations to support farming communities in transition to agroecology."
     },
     {
       "name": "Dr. Kittipum Chansri",
-      "org": "IRD - Institute of Research for Sustainable Development",
-      "faculty": "",
-      "role": "assistant"
+      "org": "Chulalongkorn University",
+      "faculty": "Faculty of Science",
+      "photo": "assets/team/kittipum.jpg",
+      "bio": "Kittipum Chansri holds a Ph.D. in Zoology from Chulalongkorn University, specializing in biodiversity, tropical ecology, and parasitoid wasp taxonomy. His research experience integrates field ecology, molecular techniques, including DNA barcoding, and museum-based approaches to investigate insect diversity, species interactions, and ecological processes. He is interested in teaching and developing courses in nutritional ecology, entomology, biodiversity and conservation, with an emphasis on field-based learning, agroecology, and biological control. His research bridges taxonomy, ecology, and applied agroecology to advance sustainable agriculture and biodiversity conservation."
     },
     {
       "name": "Ms. Nichaphart Inta",

@@ -148,9 +148,6 @@ nav a[aria-current] {
   border-radius: 5px;
   padding: 10px 17px;
 }
-.nav-contact span {
-  margin-left: 16px;
-}
 .menu-toggle {
   display: none;
 }
@@ -178,13 +175,12 @@ nav a[aria-current] {
 .hero {
   display: grid;
   grid-template-columns: 1.04fr 1fr;
-  min-height: 570px;
   max-width: 1440px;
   margin: auto;
   border-top: 1px solid var(--line);
 }
 .hero-copy {
-  padding: 66px 9% 58px 10.6%;
+  padding: 66px 9% 40px 10.6%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -221,7 +217,6 @@ nav a[aria-current] {
   position: relative;
   overflow: hidden;
   background: #c5ceb3;
-  min-height: 470px;
 }
 .hero-art>img {
   width: 100%;
@@ -250,14 +245,6 @@ nav a[aria-current] {
   color: white;
   font-size: 11px;
   letter-spacing: .3px;
-}
-.hero-note {
-  border-top: 1px solid var(--line);
-  margin-top: 35px;
-  padding-top: 18px;
-  font-size: 11px;
-  color: var(--muted);
-  width: 100%;
 }
 .actions {
   display: flex;
@@ -312,16 +299,19 @@ nav a[aria-current] {
   display: flex;
   align-items: center;
   gap: 16px;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 500;
   justify-content: center;
 }
-.principles span {
-  font-size: 24px;
-  color: #6a8048;
+.principles img {
+  flex: none;
+  width: 44px;
+  height: 44px;
 }
 .principles small {
   display: block;
-  font-size: 10px;
+  font-size: 13px;
+  font-weight: 400;
   color: var(--muted);
 }
 
@@ -381,13 +371,18 @@ nav a[aria-current] {
 .card:hover {
   border-color: #879d78;
 }
-.icon {
-  font-size: 36px;
-  font-family: Georgia,serif;
-  position: absolute;
-  right: 28px;
-  top: 17px;
-  color: #6b824e;
+.card-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 22px;
+  background: #e7e6dd;
+}
+.theme-card .number {
+  margin-bottom: 14px;
 }
 .learning-band {
   background: var(--green);
@@ -450,7 +445,7 @@ nav a[aria-current] {
 }
 footer {
   background: #e9ecdf;
-  padding: 52px 5.5% 20px;
+  padding: 52px 5.5% 40px;
 }
 .footer-top {
   display: grid;
@@ -462,10 +457,10 @@ footer {
 .footer-brand {
   font-size: 28px;
   letter-spacing: -1px;
-  font-weight: 600;
+  font-weight: 800;
 }
-.footer-brand span {
-  padding-left: 20px;
+.footer-brand .brand-nan {
+  font-weight: 500;
 }
 .footer-top p {
   font-size: 12px;
@@ -484,16 +479,6 @@ footer {
   font-size: 12px;
   margin-bottom: 9px;
 }
-.footer-bottom {
-  max-width: 1120px;
-  margin: 35px auto 0;
-  padding-top: 17px;
-  border-top: 1px solid #ccd4c3;
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
-  color: var(--muted);
-}
 
 
 /* ================================================================ */
@@ -504,7 +489,7 @@ footer {
   border-top: 1px solid var(--line);
 }
 .page-heading h1 {
-  max-width: 930px;
+  max-width: 1100px;
   font-size: clamp(38px,4.6vw,62px);
 }
 .page-heading p {
@@ -637,18 +622,6 @@ footer {
 }
 .doc-link:hover {
   border-color: var(--green);
-}
-.day-list {
-  margin: 14px 0 22px;
-  padding-left: 18px;
-  color: var(--muted);
-}
-.day-list li {
-  margin-bottom: 7px;
-}
-.day-list b {
-  color: var(--ink);
-  margin-right: 6px;
 }
 .gallery {
   margin-bottom: 18px;
@@ -816,6 +789,35 @@ footer {
 }
 
 
+/* About: keep "How we work" close to the introduction. */
+.about-intro {
+  padding-top: 10px;
+  padding-bottom: 24px;
+}
+.how-we-work {
+  padding-top: 24px;
+}
+
+/* Learning: a frame where photos will go until they are supplied. */
+.photo-slot {
+  margin-top: 18px;
+  aspect-ratio: 16/9;
+  display: grid;
+  place-items: center;
+  border: 1px dashed #bcc6b5;
+  border-radius: 5px;
+  background: #f1f2ea;
+  color: var(--muted);
+  font-size: 13px;
+}
+.split .gallery {
+  margin-top: 18px;
+}
+.learning-centers {
+  margin-top: 44px;
+}
+
+
 /* ================================================================ */
 /* Resources: publication plan                                      */
 /* ================================================================ */
@@ -853,6 +855,73 @@ footer {
 }
 .book p {
   font-size: 14px;
+  color: var(--muted);
+}
+.book-intro {
+  margin-bottom: 4px;
+}
+.resource-grid {
+  grid-template-columns: repeat(2,1fr);
+}
+.resource-card .gallery {
+  margin-bottom: 22px;
+}
+.resource-card .number {
+  margin-bottom: 14px;
+}
+
+/* Learning media page */
+.topic-filters {
+  display: grid;
+  grid-template-columns: auto repeat(3,1fr);
+  gap: 12px 20px;
+  align-items: start;
+  margin: 0 0 26px;
+}
+.topic-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.topic-group-name {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #738059;
+  margin-bottom: 2px;
+}
+.media-grid {
+  margin-bottom: 30px;
+}
+.media-card .card-photo {
+  aspect-ratio: 560/432;
+}
+.media-card h3 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+.media-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.topic-tag {
+  font-size: 10px;
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--muted);
+}
+.card .media-place {
+  font-size: 12px;
+  color: #738059;
+  margin-bottom: 10px;
+}
+.text-link small {
+  font-weight: 400;
   color: var(--muted);
 }
 details {
@@ -941,13 +1010,10 @@ details li {
     padding: 0 4%;
   }
   .hero-copy {
-    padding: 50px 8%;
+    padding: 50px 8% 40px;
   }
   h1 {
     letter-spacing: -2px;
-  }
-  .hero {
-    min-height: 520px;
   }
   .grid {
     gap: 15px;
@@ -977,9 +1043,6 @@ details li {
   .hero-art>img {
     object-position: 50% 57%;
   }
-  .hero-note {
-    margin-top: 25px;
-  }
   .principles {
     gap: 15px;
     padding: 23px 6%;
@@ -1003,8 +1066,22 @@ details li {
     margin-top: 20px;
   }
   .grid,
-  .team-grid {
+  .team-grid,
+  .resource-grid {
     grid-template-columns: 1fr;
+  }
+  .topic-filters {
+    grid-template-columns: 1fr;
+  }
+  .topic-filters > .filter {
+    justify-self: start;
+  }
+  .topic-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .topic-group-name {
+    flex-basis: 100%;
   }
   .card .number {
     margin-bottom: 26px;
@@ -1023,10 +1100,6 @@ details li {
   }
   .footer-top>div:first-child {
     grid-column: 1/-1;
-  }
-  .footer-bottom {
-    gap: 20px;
-    font-size: 9px;
   }
   .page-heading {
     padding: 37px 0 22px;
@@ -1146,9 +1219,7 @@ html[lang=th] .book-cover strong {
   font-family: inherit;
   line-height: 1.5;
 }
-html[lang=th] .hero-note,
-html[lang=th] footer p[lang=th],
-html[lang=th] .callout p[lang=th] {
+html[lang=th] footer p[lang=th] {
   display: none;
 }
 
@@ -1163,9 +1234,6 @@ html[lang=th] .callout p[lang=th] {
   }
   .site-header .nav-contact {
     padding: 9px;
-  }
-  .site-header .nav-contact span {
-    margin-left: 5px;
   }
 }
 
@@ -1267,27 +1335,120 @@ html[lang=th] .callout p[lang=th] {
 /* ================================================================ */
 /* Contact panel                                                    */
 /* ================================================================ */
-/* Contact email: smaller than the heading, but highlighted as the action to take. */
-.contact-email {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--green);
+/* "Contact us" opens the contact form in a pop-up window. */
+.contact-panel h2 {
+  margin-bottom: 18px;
+}
+.contact-panel .button {
+  gap: 14px;
+  font-size: 14px;
+  padding: 13px 24px;
+}
+
+/* Pop-up windows (a person's bio, the contact form). */
+.modal {
+  width: min(640px, calc(100% - 32px));
+  max-height: calc(100% - 48px);
+  border: 0;
+  border-radius: 8px;
+  padding: 34px;
   background: var(--paper);
-  border: 1px solid #a9b8a0;
+  color: var(--ink);
+  box-shadow: 0 24px 60px #11170f40;
+}
+.modal::backdrop {
+  background: #11170fb3;
+}
+.modal h2 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #e6eadc;
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1;
+}
+.modal-close:hover {
+  background: #d9e0cc;
+}
+.bio {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 20px;
+  padding-right: 30px;
+}
+.bio .avatar {
+  flex-basis: 110px;
+  width: 110px;
+  height: 110px;
+  font-size: 32px;
+}
+.bio-org {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+.bio-text {
+  color: #4c6051;
+  line-height: 1.8;
+  margin: 0;
+}
+.contact-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.contact-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #bcc6b5;
   border-radius: 4px;
-  padding: 11px 18px;
-  letter-spacing: .2px;
+  background: #fffdf5;
+  color: var(--ink);
+  font-weight: 400;
 }
-.contact-email:hover {
-  background: var(--green);
-  border-color: var(--green);
-  color: var(--paper);
+.contact-form textarea {
+  resize: vertical;
 }
-html[lang=th] .contact-email {
-  font-family: 'DM Sans',Arial,sans-serif;
+.contact-form .button {
+  justify-self: start;
+  font-size: 13px;
+  cursor: pointer;
+}
+.contact-form .button:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+.form-status {
+  font-size: 13px;
+  color: var(--green);
+  margin: 0;
+  min-height: 1.4em;
+}
+@media (max-width:760px) {
+  .modal {
+    padding: 26px 22px;
+  }
+  .bio {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 
@@ -1333,7 +1494,6 @@ html[lang=th] .contact-email {
   gap: 28px;
   background: #e6eadc;
   border-color: #cfd8c4;
-  max-width: 760px;
 }
 .person-lead .avatar {
   flex-basis: 132px;
@@ -1341,12 +1501,8 @@ html[lang=th] .contact-email {
   height: 132px;
   font-size: 36px;
 }
-.person-lead .eyebrow {
-  margin-bottom: 10px;
-  color: #567039;
-}
 .person-lead h3 {
-  font-size: 26px;
+  font-size: 22px;
 }
 .person-lead p {
   font-size: 14px;
@@ -1354,14 +1510,44 @@ html[lang=th] .contact-email {
 .featured-grid {
   grid-template-columns: repeat(2,1fr);
 }
-.person-email {
+/* Someone with a photo inside an institution list. */
+.org-group .person-featured {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: none;
+  padding: 20px 0;
+  align-items: center;
+}
+.org-group .avatar {
+  flex-basis: 52px;
+  width: 52px;
+  height: 52px;
+  font-size: 16px;
+}
+/* A card whose name opens the person's bio. */
+.has-bio {
+  cursor: pointer;
+}
+.has-bio:hover {
+  border-color: #879d78;
+}
+.person-open {
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.person-more {
   display: inline-block;
-  margin-top: 8px;
-  font-size: 13px;
-  font-weight: 700;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 600;
   color: var(--green);
   border-bottom: 1px solid #9fb08f;
-  font-family: 'DM Sans',Arial,sans-serif;
 }
 .org-group {
   margin-bottom: 34px;
