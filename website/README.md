@@ -58,9 +58,8 @@ The "Contact us" button on the team page opens a form that sends messages to ada
 
 ## Awaiting content
 
-- Photos for the university and high school learning pathways (frames marked "Photos coming soon")
 - Pictures and bios for the other team members
-- Papers, videos, and the ADAPT-Nan YouTube channel for the Learning media page
+- More papers and videos for the Learning media page (videos link to the ADAPT-Nan YouTube channel)
 - High school curriculum documents
 - Approved publication title, release details, and downloadable materials
 - Project field photographs, if desired in place of the landscape illustration

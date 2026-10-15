@@ -133,35 +133,36 @@ const workingMethods = [
     title: 'Observe & listen',
     text: 'Direct observation, interviews, and focus groups bring different perspectives into the conversation.',
     photos: [
-      ['methods/method-observe.jpg', 'A researcher and a student interviewing a farmer under a field shelter, taking notes together'],
-      ['methods/observe-interview-officials.jpg', 'Researchers interviewing local officials beside a field, notes in hand'],
-      ['methods/observe-livestock-visit.jpg', 'A farmer showing his pig pens to visitors during a farm visit'],
-      ['methods/observe-tobacco-harvest.jpg', 'A farmer sorting freshly harvested tobacco leaves into baskets'],
-      ['methods/observe-cattle-fair.jpg', 'Farmers and researchers inspecting native cattle at a provincial livestock fair'],
+      ['methods/observe-01.jpg', 'A researcher and a student interviewing a farmer under a field shelter, taking notes together'],
+      ['methods/observe-02.jpg', 'An elderly farmer standing beside the cattle pens of his farm'],
+      ['methods/observe-03.jpg', 'A farmer sorting freshly harvested tobacco leaves on a tarpaulin'],
+      ['methods/observe-04.jpg', 'Researchers holding questionnaires while interviewing an elderly farmer in a hat'],
+      ['methods/observe-05.jpg', 'A farmer leading native cattle through a pen at a livestock fair'],
+      ['methods/observe-06.jpg', 'A participant pointing to a hand-drawn diagram on a flip chart during a group discussion'],
     ],
   },
   {
     title: 'Explore together',
     text: 'Role-play games and participatory workshops help people explore complex systems and possible futures.',
     photos: [
-      ['methods/method-explore.jpg', 'Community members seated around a role-play game board during a participatory workshop'],
-      ['methods/explore-map-workshop.jpg', 'Participants leaning over a large aerial map of their village, marking it together'],
-      ['methods/explore-map-closeup.jpg', 'Hands placing orange markers on an aerial map to show land use'],
-      ['methods/explore-map-meeting.jpg', 'A group gathered around an aerial map on a meeting table, drawing and discussing'],
-      ['methods/explore-model-group.jpg', 'Villagers and students crowding around a three-dimensional landscape model'],
-      ['methods/explore-model-discussion.jpg', 'A facilitator explaining the landscape model to seated participants'],
+      ['methods/explore-01.jpg', 'Community members seated around a role-play game board during a participatory workshop'],
+      ['methods/explore-02.jpg', 'Villagers and researchers marking a large aerial map of their village spread on the floor'],
+      ['methods/explore-03.jpg', 'Hands tracing roads and fields on an aerial map'],
+      ['methods/explore-04.jpg', 'Workshop participants standing around an aerial map laid on a table'],
+      ['methods/explore-05.jpg', 'Students with notebooks talking with a farmer beside open fields'],
+      ['methods/explore-06.jpg', 'A student showing a tablet to a farmer in a cattle shed'],
     ],
   },
   {
     title: 'Learn through practice',
     text: 'Field learning connects scientific ideas with community experience and intergenerational knowledge.',
     photos: [
-      ['methods/method-practice.jpg', 'Villagers and a researcher sitting together on the forest floor during a community forest visit'],
-      ['methods/practice-community-forest.jpg', 'A community forest of tall trees with a collection point among the trunks'],
-      ['methods/practice-vegetable-nursery.jpg', 'A grower tending trays of lettuce seedlings under a shade net'],
-      ['methods/practice-sorting-harvest.jpg', 'A farmer spreading the harvest on a drying mat beside her house'],
-      ['methods/practice-drying-racks.jpg', 'Rows of bamboo drying racks laid out in the open air after harvest'],
-      ['methods/practice-rice-terraces.jpg', 'Young rice growing in irrigated paddies framed by trees and hills'],
+      ['methods/practice-01.jpg', 'Villagers and a researcher sitting together on the forest floor during a community forest visit'],
+      ['methods/practice-02.jpg', 'A farmer spreading harvested crops on a bamboo drying rack'],
+      ['methods/practice-03.jpg', 'Native cattle feeding on straw in a farm shelter'],
+      ['methods/practice-04.jpg', 'A community forest of tall trees, one trunk wrapped with a yellow cloth'],
+      ['methods/practice-05.jpg', 'A grower tending rows of lettuce under a shade net'],
+      ['methods/practice-06.jpg', 'Students and a teacher playing a farming game with coloured trays and cards'],
     ],
   },
 ];
@@ -302,11 +303,24 @@ const learningTabs = {university: 'University students', school: 'High school st
 
 // Photo slots for the learning pathways. Each slot shows its photos as a
 // slideshow; a slot with no photos yet shows a "Photos coming soon" frame.
+const school = (file, alt) => [`learning/school/${file}.jpg`, alt];
 const learningPhotos = {
-  universityOnline: [],
-  universityField: [],
-  schoolVegetables: [],
-  schoolRice: [],
+  schoolVegetables: [
+    school('vegetables-01', 'Students drawing up a vegetable garden plan together at a table'),
+    school('vegetables-02', 'Students building bamboo frames for the school vegetable garden'),
+    school('vegetables-03', 'Vegetable beds and climbing plants in the school garden'),
+    school('vegetables-04', 'A round bed of herbs and vegetables edged with bamboo'),
+    school('vegetables-05', 'Students and teachers gathered for a group photo in the school garden'),
+    school('vegetables-06', 'Students planting and weeding vegetable beds'),
+  ],
+  schoolRice: [
+    school('rice-01', 'Farmers and students transplanting rice seedlings into a paddy'),
+    school('rice-02', 'Students bending to plant rice in a flooded field'),
+    school('rice-03', 'Green rice fields at the foot of forested mountains'),
+    school('rice-04', 'Students sowing rice seeds in a prepared seedbed'),
+    school('rice-05', 'Students sitting on the grass for a lesson beside the rice fields'),
+    school('rice-06', 'Students and a local wisdom teacher preparing a dry rice plot'),
+  ],
 };
 const photoSlot = key => {
   const photos = learningPhotos[key];
@@ -318,24 +332,7 @@ const learningContent = {
     <span class="badge">University learning</span>
     <h2 style="margin-top:20px">Agroecology, experienced in the field</h2>
     <p>The proposed international BSc curriculum connects foundational learning with an immersive field block in Nan. The curriculum architecture combines 16 hours online with 29 hours in the field: 45 hours and 3 credits.</p>
-    <div class="split">
-      <div>
-        <h3>01 · Prepare online</h3>
-        <ul>
-          <li>Foundations of agroecology</li>
-          <li>Soil, water, and integrated pest management</li>
-          <li>Systems thinking and companion modeling</li>
-          <li>Community solutions and food systems</li>
-        </ul>
-        ${photoSlot('universityOnline')}
-      </div>
-      <div>
-        <h3>02 · Learn in Nan</h3>
-        <p>Seven days of immersive learning through daily excursions and a cycle of observation, experience, and synthesis. The field block culminates in a multi-stakeholder presentation.</p>
-        <p>A group of 30 BSc students from Kasetsart University, Chulalongkorn University, Nan Community College and Rajamangala University of Technology Lanna Nan have enrolled in the field journey and collaborative learning.</p>
-        ${photoSlot('universityField')}
-      </div>
-    </div>
+    <img class="wide-image" src="assets/image3.png" width="1376" height="739" alt="Curriculum architecture: four weeks of online preparation totaling 16 hours, followed by a 29-hour intensive field block across seven days in Nan. Learning follows an observe, embody, and synthesize cycle.">
     <div class="callout">
       <h3>Curriculum documents</h3>
       <div class="doc-links">
@@ -384,14 +381,19 @@ const learningContent = {
       <a class="text-link" href="#media">Browse the learning resources ${arrow}</a>
     </div>`,
   community: `
-    <span class="badge">Farmers & communities</span>
-    <h2 style="margin-top:20px">Local experience, shared possibilities</h2>
-    <p>ADAPT-Nan supports knowledge sharing among organic farmer groups, local agricultural networks, educators, and researchers</p>
-    <ul>
-      <li>Training and counseling to support agroecological transitions</li>
-      <li>Participatory workshops and role-play games to explore future farming systems</li>
-      <li>Nan Forums and online learning media to connect diverse perspectives</li>
-    </ul>
+    <div class="split community-intro">
+      <div>
+        <span class="badge">Farmers & communities</span>
+        <h2 style="margin-top:20px">Local experience, shared possibilities</h2>
+        <p>ADAPT-Nan supports knowledge sharing among organic farmer groups, local agricultural networks, educators, and researchers</p>
+        <ul>
+          <li>Training and counseling to support agroecological transitions</li>
+          <li>Participatory workshops and role-play games to explore future farming systems</li>
+          <li>Nan Forums and online learning media to connect diverse perspectives</li>
+        </ul>
+      </div>
+      <img class="community-photo" src="assets/learning/community-workshop.jpg" width="1000" height="750" alt="Farmers playing a role-play game around a board with coloured trays during a village workshop" loading="lazy">
+    </div>
     <div class="learning-centers" data-learning-centers></div>`,
 };
 
@@ -416,30 +418,21 @@ function learning(key = 'university') {
 
 // Cards on the resources page, in display order. A link starting with "#" stays
 // on this website; any other link opens in a new tab. Cards without a link show
-// a "Coming soon" badge. Each card has a slideshow of photos.
+// a "Coming soon" badge. `photo` is [path inside assets/, description].
 const resourceCards = [
   {
     title: 'Serious games',
     text: 'Participatory games and facilitation tools for exploring agroecological challenges.',
     link: 'https://gamerepocu.github.io/gamerepocu/',
     linkLabel: 'Explore the game repository',
-    photos: [
-      ['resources/games-students.jpg', 'Students gathered around a game board during a role-play session'],
-      ['resources/games-trays.jpg', 'Students playing a land-use game with coloured trays and cards'],
-      ['resources/games-workshop.jpg', 'Workshop participants playing a role-play game on a large board'],
-      ['methods/method-explore.jpg', 'Community members seated around a role-play game board during a participatory workshop'],
-    ],
+    photo: ['resources/serious-games.jpg', 'Villagers playing a board game under a “Gaming” banner of colourful icons'],
   },
   {
     title: 'Learning media',
     text: 'Field experiences, teaching resources, and publications on agroecological transitions.',
     link: '#media',
     linkLabel: 'Find learning resources',
-    photos: [
-      ['resources/learning-center-visit.jpg', 'Students seated in a circle during a visit to a learning center'],
-      ['media/chtn-learning-center.jpg', 'Cover of the Nan Headwaters Community Learning Center brochure'],
-      ['media/rice-farmer-field-school.jpg', 'Cover of the Rice Farmer Field School brochure'],
-    ],
+    photo: ['resources/learning-media.jpg', 'A finger touching an “E-learning” button among colourful learning icons'],
   },
 ];
 const externalLink = url => `href="${url}" target="_blank" rel="noopener noreferrer"`;
@@ -453,7 +446,7 @@ function resourceCard(card, i) {
     : '<span class="badge" style="align-self:flex-start">Coming soon</span>';
   return `
     <article class="card resource-card">
-      ${gallery(card.photos, `resource-${i}`)}
+      <img class="card-photo resource-photo" src="assets/${card.photo[0]}" width="1200" height="675" alt="${card.photo[1]}" loading="lazy">
       <span class="number">0${i + 1} / RESOURCE COLLECTION</span>
       <h3>${title}</h3>
       <p>${card.text}</p>
@@ -501,6 +494,7 @@ function mediaPage(topic = '') {
   return `
     <div class="container">
       ${heading('Document repository', 'Find learning resources', 'Field experiences, teaching resources, and publications on agroecological transitions.')}
+      <p class="channel-link"><a class="text-link" href="${window.ADAPT_MEDIA.channel}" target="_blank" rel="noopener noreferrer">Watch our videos on the ADAPT-Nan YouTube channel ${arrow}<span class="sr-only"> (opens in a new tab)</span></a></p>
       <label class="sr-only" for="media-search">Search media, topics or keywords</label>
       <input class="search" id="media-search" type="search" placeholder="Search media, topics or keywords…">
       <div class="filters" aria-label="Filter by media type">
@@ -524,9 +518,13 @@ function mediaCard(item) {
   const external = /^https?:/.test(item.link);
   const target = external ? 'target="_blank" rel="noopener noreferrer"' : 'target="_blank" rel="noopener"';
   const topics = item.topics.map(id => research.find(r => r.id === id)).filter(Boolean);
+  const video = item.type === 'Video';
   return `
     <article class="card media-card">
-      <img class="card-photo" src="assets/${item.image}" width="560" height="432" alt="" loading="lazy">
+      <div class="media-thumb${video ? ' is-video' : ''}">
+        <img class="card-photo" src="assets/${item.image}" width="560" height="432" alt="" loading="lazy">
+        ${video ? '<span class="play-badge" aria-hidden="true">▶</span>' : ''}
+      </div>
       <div class="media-tags"><span class="badge">${item.type}</span>${topics.map(r => `<span class="topic-tag">${r.number} ${escapeHTML(r.short)}</span>`).join('')}</div>
       <h3>${escapeHTML(item.title)}</h3>
       ${item.place ? `<p class="media-place">${escapeHTML(item.place)}</p>` : ''}
