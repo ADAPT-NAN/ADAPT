@@ -798,6 +798,20 @@ footer {
   padding-top: 24px;
 }
 
+/* Farmers & communities: the introduction with a photo on the right. */
+.community-intro {
+  grid-template-columns: 1.55fr 1fr;
+  gap: 36px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.community-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
 /* Learning: a frame where photos will go until they are supplied. */
 .photo-slot {
   margin-top: 18px;
@@ -863,8 +877,8 @@ footer {
 .resource-grid {
   grid-template-columns: repeat(2,1fr);
 }
-.resource-card .gallery {
-  margin-bottom: 22px;
+.resource-photo {
+  aspect-ratio: 16/9;
 }
 .resource-card .number {
   margin-bottom: 14px;
@@ -895,8 +909,35 @@ footer {
 .media-grid {
   margin-bottom: 30px;
 }
+.media-thumb {
+  position: relative;
+}
 .media-card .card-photo {
   aspect-ratio: 560/432;
+}
+/* Videos keep their whole frame on a dark background, with a play badge. */
+.media-thumb.is-video .card-photo {
+  object-fit: contain;
+  background: #1d2b22;
+}
+.play-badge {
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 11px);
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  padding-left: 4px;
+  background: #c4302bdd;
+  color: #fff;
+  font-size: 20px;
+  pointer-events: none;
+}
+.channel-link {
+  margin: -14px 0 26px;
 }
 .media-card h3 {
   font-size: 20px;
@@ -1301,6 +1342,21 @@ html[lang=th] footer p[lang=th] {
 @media (max-width:480px) {
   .brand small {
     letter-spacing: .7px;
+  }
+  /* Keep the logo, language switch, and menu button within narrow phones. */
+  .brand {
+    font-size: 21px;
+    gap: 8px;
+  }
+  .brand img {
+    height: 54px;
+  }
+  .brand small {
+    font-size: 7px;
+  }
+  .brand .brand-tagline {
+    font-size: 8px;
+    letter-spacing: 0;
   }
   .site-header {
     gap: 6px;
