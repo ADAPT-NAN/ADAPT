@@ -337,6 +337,7 @@ const learningContent = {
       <h3>Curriculum documents</h3>
       <div class="doc-links">
         <a class="doc-link" href="assets/docs/bsc-curriculum-flyer.pdf" target="_blank" rel="noopener noreferrer">Programme flyer <small>PDF · 899 KB</small></a>
+        <a class="doc-link" href="assets/docs/field-block-2026.pdf" target="_blank" rel="noopener noreferrer">Field Block 2026 <small>PDF · 2.1 MB</small></a>
       </div>
     </div>`,
   school: `
