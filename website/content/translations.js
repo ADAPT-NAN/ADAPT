@@ -1,4 +1,8 @@
 window.ADAPT_TRANSLATIONS = {
+  "Nan Province facts and figures": "ข้อเท็จจริงและตัวเลขสำคัญของจังหวัดน่าน",
+  "Nan Province · October 2026": "จังหวัดน่าน · ตุลาคม 2569",
+  "Agriculture, forests, people, economy and development plans of Nan Province, based on multiple sources including official statistics.": "ข้อมูลด้านการเกษตร ป่าไม้ ประชากร เศรษฐกิจ และแผนพัฒนาจังหวัดน่าน รวบรวมจากหลายแหล่ง รวมถึงสถิติทางการ",
+  "Field Block 2026": "การเรียนรู้ภาคสนาม 2569",
   // October 2026 revisions, second round
   "An elderly farmer standing beside the cattle pens of his farm": "เกษตรกรสูงวัยยืนข้างคอกวัวในฟาร์มของตน",
   "A farmer sorting freshly harvested tobacco leaves on a tarpaulin": "เกษตรกรคัดใบยาสูบที่เพิ่งเก็บเกี่ยวบนผ้าใบ",

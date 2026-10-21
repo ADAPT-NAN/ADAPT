@@ -15,6 +15,17 @@ window.ADAPT_MEDIA = {
   "types": ["Video", "Article", "Book", "Report", "Brochure"],
   "items": [
     {
+      "title": "Nan Province facts and figures",
+      "place": "Nan Province · October 2026",
+      "summary": "Agriculture, forests, people, economy and development plans of Nan Province, based on multiple sources including official statistics.",
+      "type": "Brochure",
+      "topics": ["1-1", "3-2"],
+      "image": "media/nan-province-facts.jpg",
+      "link": "assets/docs/nan-province-facts-and-figures-2026.pdf",
+      "linkLabel": "Open PDF",
+      "size": "PDF · 580 KB"
+    },
+    {
       "title": "Native Red Cows of Nan",
       "place": "ADAPT-Nan · YouTube",
       "summary": "A video on the native red cows of Nan Province, produced for the curriculum on agroecology experiential learning in Nan.",
