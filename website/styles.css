@@ -473,6 +473,28 @@ footer {
   letter-spacing: 1.8px;
   margin-bottom: 19px;
 }
+/* Visitor and download totals (shown once statistics are set up). */
+.footer-stats {
+  max-width: 1120px;
+  margin: 30px auto 0;
+  padding-top: 16px;
+  border-top: 1px solid #ccd4c3;
+  font-size: 12px;
+  color: var(--muted);
+}
+.footer-stats b {
+  color: var(--ink);
+  font-weight: 700;
+}
+.download-count {
+  font-weight: 400;
+  color: var(--muted);
+}
+.card > .download-count {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+}
 .footer-top>div>a:not(.footer-brand),
 .footer-top>div>span {
   display: block;
