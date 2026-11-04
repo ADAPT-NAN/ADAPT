@@ -22,6 +22,7 @@ function translate(text){
       .replace(/^(\d+) of (\d+) team members$/, '$1 จาก $2 สมาชิกทีมงาน')
       .replace(/^(\d+) of (\d+) resources$/, '$1 จาก $2 รายการ')
       .replace(/^Photo (\d+)$/, 'รูปที่ $1')
+      .replace(/^([\d,]+) downloads?$/, 'ดาวน์โหลด $1 ครั้ง')
       .replace(/^(\d+) \/ RESEARCH THEME$/, '$1 / ประเด็นวิจัย')
       .replace(/^(\d+) \/ RESOURCE COLLECTION$/, '$1 / คลังความรู้')
       .replace(/^Part (I|II|III) · /, 'ส่วนที่ $1 · ')

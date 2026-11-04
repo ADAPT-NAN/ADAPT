@@ -1,4 +1,6 @@
 window.ADAPT_TRANSLATIONS = {
+  "Visitors": "ผู้เข้าชม",
+  "Downloads": "ดาวน์โหลด",
   "Nan Province facts and figures": "ข้อเท็จจริงและตัวเลขสำคัญของจังหวัดน่าน",
   "Nan Province · October 2026": "จังหวัดน่าน · ตุลาคม 2569",
   "Agriculture, forests, people, economy and development plans of Nan Province, based on multiple sources including official statistics.": "ข้อมูลด้านการเกษตร ป่าไม้ ประชากร เศรษฐกิจ และแผนพัฒนาจังหวัดน่าน รวบรวมจากหลายแหล่ง รวมถึงสถิติทางการ",

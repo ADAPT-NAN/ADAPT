@@ -555,6 +555,7 @@ function updateMedia() {
     : '<p class="empty">No resources found. Try another keyword, media type, or topic.</p>';
   document.querySelector('#media-count').textContent = translate(`${shown.length} of ${items.length} resources`);
   localize(document.querySelector('#media-results'));
+  showDownloadCounts(document.querySelector('#media-results'));
 }
 
 /* ------------------------------------------------------------------ */
@@ -841,7 +842,99 @@ function render() {
     centers.innerHTML = window.NanLearning.html();
     window.NanLearning.mount();
   }
+  showDownloadCounts(main);
   window.scrollTo(0, 0);
+}
+
+/* ------------------------------------------------------------------ */
+/* Visitor and download statistics (GoatCounter)                       */
+/* ------------------------------------------------------------------ */
+// Visits and PDF downloads are counted with GoatCounter (goatcounter.com), which
+// uses no cookies and keeps no personal data. The footer shows the totals and
+// every PDF link shows how many visitors downloaded it.
+//
+// GOATCOUNTER_CODE is the site code chosen when signing up: "adapt-nan" means
+// https://adapt-nan.goatcounter.com. While it is empty nothing is counted and no
+// numbers are shown. In the GoatCounter settings, turn on "Allow adding visitor
+// counts on your website" so the website can show the numbers. GoatCounter
+// updates the shown numbers up to four hours late, and does not count visits
+// from a local preview (localhost).
+const GOATCOUNTER_CODE = '';
+const statsSite = `https://${GOATCOUNTER_CODE}.goatcounter.com`;
+const isPdfLink = a => /^assets\/docs\/.+\.pdf$/i.test(a.getAttribute('href') || '');
+const downloadEvent = href => `download-${href.split('/').pop()}`;
+
+// Every PDF offered on the site: the learning media plus those linked from the
+// learning pages.
+function downloadableFiles() {
+  const fromMedia = window.ADAPT_MEDIA.items.map(item => item.link);
+  const fromPages = Object.values(learningContent).join(' ').match(/assets\/docs\/[^"' ]+\.pdf/gi) || [];
+  return [...new Set([...fromMedia, ...fromPages].filter(link => /^assets\/docs\/.+\.pdf$/i.test(link)))];
+}
+
+function countPageView() {
+  if (typeof window.goatcounter?.count !== 'function' || location.hash === '#main') return;
+  window.goatcounter.count({path: location.pathname + (location.hash || '#home')});
+}
+
+function countDownload(e) {
+  const link = e.target.closest('a[href]');
+  if (!link || !isPdfLink(link) || typeof window.goatcounter?.count !== 'function') return;
+  // Name the download after its card title, or the link's own label.
+  const title = link.closest('.media-card')?.querySelector('h3')?.textContent || link.firstChild.textContent;
+  window.goatcounter.count({path: downloadEvent(link.getAttribute('href')), title: title.trim().slice(0, 200), event: true});
+}
+
+// Resolves to a number, 0 for something not counted yet (404), or null when
+// the numbers cannot be read (counter setting off, or offline).
+const statsCache = {};
+function fetchCount(path) {
+  statsCache[path] ??= fetch(`${statsSite}/counter/${encodeURIComponent(path)}.json`)
+    .then(response => response.ok
+      ? response.json().then(data => Number(String(data.count).replace(/\D/g, '')) || 0)
+      : response.status === 404 ? 0 : null)
+    .catch(() => null);
+  return statsCache[path];
+}
+const formatCount = n => n.toLocaleString('en-US');
+
+// Footer: total visitors and total downloads of all PDFs.
+async function showSiteStats() {
+  const box = document.querySelector('.footer-stats');
+  if (!GOATCOUNTER_CODE || !box) return;
+  const visitors = await fetchCount('TOTAL');
+  if (visitors === null) return;
+  const downloads = await Promise.all(downloadableFiles().map(file => fetchCount(downloadEvent(file))));
+  box.querySelector('[data-stat=visitors]').textContent = formatCount(visitors);
+  box.querySelector('[data-stat=downloads]').textContent = formatCount(downloads.reduce((sum, n) => sum + (n || 0), 0));
+  box.hidden = false;
+}
+
+// Adds "N downloads" to every PDF link inside `root`: inside the small document
+// buttons, and on its own line under the links of the learning media cards.
+function showDownloadCounts(root) {
+  if (!GOATCOUNTER_CODE) return;
+  root.querySelectorAll('a[href]').forEach(async link => {
+    const inside = link.classList.contains('doc-link');
+    const shown = () => inside ? link.querySelector('.download-count') : link.nextElementSibling?.matches('.download-count');
+    if (!isPdfLink(link) || shown()) return;
+    const [visitors, downloads] = await Promise.all([fetchCount('TOTAL'), fetchCount(downloadEvent(link.getAttribute('href')))]);
+    if (visitors === null || downloads === null || shown()) return;
+    const text = translate(`${formatCount(downloads)} ${downloads === 1 ? 'download' : 'downloads'}`);
+    link.insertAdjacentHTML(inside ? 'beforeend' : 'afterend', `<small class="download-count">${text}</small>`);
+  });
+}
+
+if (GOATCOUNTER_CODE) {
+  window.goatcounter = {no_onload: true};
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://gc.zgo.at/count.js';
+  script.dataset.goatcounter = `${statsSite}/count`;
+  script.addEventListener('load', countPageView);
+  document.head.append(script);
+  document.addEventListener('click', countDownload);
+  document.addEventListener('auxclick', countDownload);
 }
 
 /* ------------------------------------------------------------------ */
@@ -979,9 +1072,11 @@ window.addEventListener('hashchange', () => {
   }
   render();
   main.focus({preventScroll: true});
+  countPageView();
 });
 
 render();
+showSiteStats();
 
 /* ------------------------------------------------------------------ */
 /* Language switch                                                     */
