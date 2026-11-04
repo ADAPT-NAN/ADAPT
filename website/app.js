@@ -859,7 +859,7 @@ function render() {
 // counts on your website" so the website can show the numbers. GoatCounter
 // updates the shown numbers up to four hours late, and does not count visits
 // from a local preview (localhost).
-const GOATCOUNTER_CODE = '';
+const GOATCOUNTER_CODE = 'adapt';
 const statsSite = `https://${GOATCOUNTER_CODE}.goatcounter.com`;
 const isPdfLink = a => /^assets\/docs\/.+\.pdf$/i.test(a.getAttribute('href') || '');
 const downloadEvent = href => `download-${href.split('/').pop()}`;

@@ -56,9 +56,9 @@ The supplied URL https://en.ird.fr/psf-adaptmod-2025-2027 was checked on 22 Sept
 
 The footer shows the number of visitors and the total number of PDF downloads, and each PDF link shows how many visitors downloaded it. Counting uses GoatCounter (https://www.goatcounter.com), which is free for non-commercial sites, uses no cookies, and keeps no personal data. To turn it on:
 
-1. Sign up at https://www.goatcounter.com/signup and choose a site code, for example `adapt-nan` (the statistics are then at https://adapt-nan.goatcounter.com).
+1. Sign up at https://www.goatcounter.com/signup and choose a site code. The ADAPT-Nan site uses `adapt`, so the statistics are at https://adapt.goatcounter.com.
 2. In GoatCounter, open **Settings** and turn on **Allow adding visitor counts on your website**, then save.
-3. In `app.js`, set `GOATCOUNTER_CODE` to the site code, for example `const GOATCOUNTER_CODE = 'adapt-nan';`, and publish.
+3. In `app.js`, set `GOATCOUNTER_CODE` to the site code, currently `const GOATCOUNTER_CODE = 'adapt';`, and publish.
 
 While `GOATCOUNTER_CODE` is empty, nothing is counted and no numbers are shown. Each page visit and each click on a PDF (named `download-<file name>`) is counted. The numbers on the website can lag by up to four hours, and visits from a local preview are not counted. The GoatCounter dashboard shows the full detail: visits per page and day, downloads per document, countries, and referring sites.
 
